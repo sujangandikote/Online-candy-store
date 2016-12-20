@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- Gandikota ramesh, Sujan    Account :  jadrn018
+        	CS545, Fall 2015
+        	Project #4 -->
+<head>
+	<title>Bertha's:Online shopping</title>
+
+	<meta http-equiv="content-type" 
+		content="text/html;charset=utf-8" />
+
+    <link rel="stylesheet" type="text/css" 
+        href="jquery-ui-1.10.2.custom/css/custom-theme/jquery-ui-1.10.2.custom.min.css" /> 
+    <link rel="stylesheet" type="text/css" href="css/styling.css" /> 
+    <link rel="stylesheet" type="text/css" href="css/chocolate.css" /> 
+
+    
+    <script type="text/javascript" src="jquery/jquery.js"></script>
+    <script type="text/javascript" src="jquery-ui-1.10.2.custom/js/jquery-ui-1.10.2.custom.min.js"></script>
+    <script type="text/javascript" src="jquery/ajax_get_lib.js"></script>
+    <script type="text/javascript" src="jquery/ajax_populate_page.js"></script> 
+                      
+</head>
+
+    <body>
+        <div id="top_heading">
+            <h1>Bertha's chocolate Deluxe</h1>
+        </div>
+        <div id="heading">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Our Products</a></li>
+                <li><a href="ajax_populate_page.html">Order Online!</a></li>
+                <li><a href="about.html">About Bertha</a></li>
+                <li><a href="contact.html">Contact us!</a></li>
+            </ul>
+        </div>
+        <div id="counter"><input type="button" value="your cart" id="choc_cart" /></div>
+        <div>
+            <div id="category">
+            <input type="button" value="Milk Chocolate" id="milk" />
+            <input type="button" value="Dark Chocolate" id="dark" /> 
+            <input type="button" value="Nuts and Chews" id="nuts" />
+            <input type="button" value="Brittles and Toffies" id="brittle" />
+            <input type="button" value="Truffles" id="truffles" />
+            <input type="button" value="Gifts" id="gifts" />
+            <input type="button" value="Holiday assortments" id="holiday" />
+            </div>
+            <hr />
+            <div id="content">
+
+                <div class="ui-widget">
+                    <div id="dialog-modal" class="widget-dialog-container" title="Complete Your Order">
+                        <form method="post" action="/perl/jadrn018/proj4/read_cookie.cgi"> 
+                            <fieldset> 
+                            <legend>Shipping Address</legend>
+                            <table>
+                                <tr>
+                                    <td>Name:</td>
+                                    <td><input type="text" name="name" id="name" size="20" /></td>
+                                </tr>
+                                <tr>
+                                    <td>Address:</td>
+                                    <td><input type="text" name="address" id="address" size="20" /></td>
+                                </tr>
+                                <tr>
+                                    <td>City:</td>
+                                    <td><input type="text" name="city" id="city" size="20" /></td>
+                                </tr>
+                                <tr>
+                                    <td>State:</td>
+                                    <td><input type="text" name="state" id="state" size="2" /></td>
+                                </tr>
+                                <tr>
+                                    <td>Zip:</td>
+                                    <td><input type="text" name="zip" id="zip" size="5" /></td>            
+                                </tr>
+                                <tr>
+                                    <td>Phone:</td>
+                                    <td><input type="text" name="phone" id="phone" size="10" /></td> 
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                </table>
+                                </fieldset>
+                            <input type="checkbox" name="same_address" id="same_address" value="same address" />Same as Shipping Address   
+                            <div id="bill">
+                            <fieldset> 
+                            <legend>Billing Address</legend>
+                            <table>
+                                <tr>
+                                    <td>Name:</td>
+                                    <td><input type="text" name="billing_name" id="billing_name" size="20" /></td>
+                                </tr>
+                                <tr>
+                                    <td>Address:</td>
+                                    <td><input type="text" name="billing_address" id="billing_address" size="20" /></td>
+                                </tr>
+                                <tr>
+                                    <td>City:</td>
+                                    <td><input type="text" name="billing_city" id="billing_city" size="20" /></td>
+                                </tr>
+                                <tr>
+                                    <td>State:</td>
+                                    <td><input type="text" name="billing_state" id="billing_state" size="2" /></td>
+                                </tr>
+                                <tr>
+                                    <td>Zip:</td>
+                                    <td><input type="text" name="billing_zip" id="billing_zip" size="5" /></td>            
+                                </tr> 
+                                <tr>
+                                    <td>Phone:</td>
+                                    <td><input type="text" name="billing_phone" id="billing_phone" size="10" /></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                </table>
+                                </fieldset>
+                                </div>
+                                <fieldset>
+                                <legend>Payment Details</legend>
+                                <table>
+                                <tr>
+                                    <td>Card Number:</td>
+                                    <td><input type="text" name="cnumber" placeholder="xxxxxxxxxxxxxxxx" id="cnumber" size="16" maxlength="16" /></td>
+                                </tr>
+                                <tr>
+                                    <td>Card Type:</td>
+                                    <td>
+                                    <input type="radio" name="ctype" value="master" />Master &nbsp;
+                                    <input type="radio" name="ctype" value="visa" />Visa &nbsp;
+                                    <input type="radio" name="ctype" value="discover" />Discover &nbsp; &nbsp;
+                                    <input type="radio" name="ctype" value="american" />American Express &nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Card Expiration</td>
+                                    <td><input type="text" name="month" placeholder="mm" id="month" size="2" maxlength="2" />/
+                                        <input type="text" name="year" placeholder="yyyy" id="year" size="4" maxlength="4" />
+                                    </td>
+                                </tr>
+                                </table>
+                                </fieldset>
+                                <div id="message_line">&nbsp;</div>
+                                    <input type="reset" />
+                                    <input type="submit" class="ui-button" value="Submit Order"/> 
+                        </form>       
+                    </div>
+                </div>
+            </div>
+        </div>                            
+       
+    </body>
+</html>    

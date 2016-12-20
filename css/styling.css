@@ -1,0 +1,63 @@
+/*Gandikota ramesh, Sujan    Account :  jadrn018 
+            CS545, Fall 2015
+            Project #4 */
+
+#shop_cart{
+    margin-left: auto;
+    margin-right: auto;
+    border : 1px solid black;
+    }    
+    
+ .shop_style {
+    background-color: #eee;
+    font-weight: bold;
+    font-size: 30px;
+     border : 1px solid black;
+    padding: 5px 20px 5px 20px;
+    }
+
+    #shop_cart td {
+     border : none;
+    background-color: white;
+    padding: 5px 20px 5px 20px;
+    }
+
+    .table_data {
+         border : none;
+        background-color: white;
+         padding: 1px 1px 1px 1px;
+         margin-left: 1px;
+    margin-right: 1px;
+    }
+
+#content{
+    background-color: #E6E6E6;
+    text-align: center;
+    margin-top: 10px;
+}
+
+h1{
+    text-align: center;
+
+}
+
+#counter {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-weight: normal;
+    font-size: 80%;
+    } 
+
+#category{
+    text-align: center;
+    margin-top: 10px;
+    }
+
+span {
+    font-style: italic;
+    font-weight: bold;
+    color: green;
+    display: none;
+    margin-left: 50px;
+    }
